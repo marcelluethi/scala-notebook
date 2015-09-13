@@ -28,7 +28,8 @@ object NotebookBuild extends Build {
     resolvers in ThisBuild ++= Seq(
       Resolver.typesafeRepo("releases"),
       Resolver.typesafeIvyRepo("releases"),
-      Resolver.typesafeIvyRepo("snapshots")
+      Resolver.typesafeIvyRepo("snapshots"),
+      "shapemodelling unibas" at "http://shapemodelling.cs.unibas.ch/repository/public"
   ),
 
     compileOrder := CompileOrder.Mixed,
@@ -134,7 +135,10 @@ object NotebookBuild extends Build {
         commonsHttp,
         scalaTest,
         scalaMock,
-        "org.fusesource.scalate" %% "scalate-core" % "1.6.1"
+        "org.fusesource.scalate" %% "scalate-core" % "1.6.1",
+        "ch.unibas.cs.gravis" %% "scalismo" % "0.9.+",
+        "ch.unibas.cs.gravis" % "scalismo-native-all" % "3.0.+",
+        "ch.unibas.cs.gravis" %% "scalismo-ui" % "0.5.+"
       )
     )
 
